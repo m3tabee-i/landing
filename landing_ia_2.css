@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000000;
+    color: #fff; /* White text */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: absolute; /* Torna o header posicionado sobre a hero */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Garante que o header fique por cima da imagem */
+    background: transparent; /* Fundo transparente */
+    max-height: 150px;
+}
+
+header nav ul li a {
+    color: #fff; /* Mantém o texto branco */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra para garantir a legibilidade */
+}
+
+.logo img {
+    height: 100%;
+    max-height: 120px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7)); /* Sombra para destacar a logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    text-align: center;
+    margin-left: 20px;
+    height: 30px;
+    line-height: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.cont{
+    background: #000000;
+    border-radius: 5px;
+    width: 180px;
+    height: 30px;
+}
+.log{
+    background: #ff6600;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url('guitar-5043613 medium rare.jpg'); /* Substitua pela sua imagem */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 80vh; /* Faz com que a seção hero ocupe toda a altura da tela */
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay */
+}
+
+.hero h1 {
+    position: relative;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    top: 100px;
+}
+
+.hero p {
+    position: relative;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    top: 100px;
+}
+.hero .cta-button{
+    position: relative;
+    top: 100px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff6600; /* Orange color */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px 20px;
+    background-color: #1c1c1c; /* Dark gray background */
+}
+
+.feature {
+    width: 30%;
+    text-align: center;
+}
+
+.feature .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ff6600; /* Orange color */
+}
+
+.feature h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom-style: ridge;
+    border-bottom-color: #ff6600;
+
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #acacac; /* Light gray text */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #666;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* Show toggle on mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;  /* Faz com que o menu se sobreponha corretamente */
+        top: 60px;  /* Abaixo do header */
+        right: 0;
+        width: 100%;  /* Ocupa toda a largura */
+        background-color: rgba(0, 0, 0, 0.8);  /* Fundo semitransparente */
+        padding: 10px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;  /* Espaçamento entre os itens */
+    }
+}
+
+/* Sign-up Section */
+.signup {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.signup h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.signup p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.signup form {
+    display: inline-block;
+}
+
+.signup input[type="email"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.signup button {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup button:hover {
+    background-color: #e65c00;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 50px 20px;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.faq h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    color: #ff6600;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #ccc;
+    max-height: 0; /* Inicialmente escondido */
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Animação suave */
+    transition-duration: 2s;
+}
+
+.faq-item:hover {
+    background: #ff6600;
+
+    h3{
+        color: #000;
+    }
+    p{
+    max-height: 500px; /* Define o valor para expandir a altura conforme o conteúdo */
+    }
+}
+
+
+/*adaptabilidade*/
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+        top: 50px;  /* Ajuste de posição */
+    }
+
+    .hero p {
+        font-size: 1rem;
+        top: 60px;  /* Ajuste de posição */
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+    }
+
+    .features {
+        flex-direction: column;
+        padding: 30px 10px;
+    }
+
+    .feature {
+        width: 90%;  /* Ajusta a largura */
+        margin-bottom: 20px;
+    }
+
+    .signup h2, .faq h2 {
+        font-size: 1.5rem;
+    }
+
+    .signup input[type="email"] {
+        width: 80%;
+    }
+}
